@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 import Input from './Input';
 import TextArea from './TextArea';
+import Select from './Select';
+import './Form.css';
 
 class Form extends React.Component {
   render() {
@@ -13,7 +15,7 @@ class Form extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      // cardRare,
+      cardRare,
       cardTrunfo,
       isSaveButtonDisabled,
       onInputChange,
@@ -39,14 +41,14 @@ class Form extends React.Component {
         <Input
           type="number"
           testId="attr1-input"
-          labelText="Pontos de Vida"
+          labelText="Vida"
           value={ cardAttr1 }
           onInputChange={ onInputChange }
         />
         <Input
           type="number"
           testId="attr2-input"
-          labelText="Pontos de Ataque"
+          labelText="Ataque"
           value={ cardAttr2 }
           onInputChange={ onInputChange }
         />
@@ -63,6 +65,13 @@ class Form extends React.Component {
           labelText="Imagem"
           value={ cardImage }
           onInputChange={ onInputChange }
+        />
+        <Select
+          testId="rare-input"
+          labelText="Raridade"
+          onInputChange={ onInputChange }
+          value={ cardRare }
+          options={ ['normal', 'raro', 'muito raro'] }
         />
         <Input
           type="checkbox"

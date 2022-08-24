@@ -1,0 +1,36 @@
+.nameInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.nameInput label {
+  margin: 5px 10px;
+}
+
+.nameInput input {
+  margin: 5px 10px;
+}
+
+.sameLine {
+  display: flex;
+  flex-basis: 100%;
+  margin: 10px;
+}
+
+.sameLine label {
+  width: 100px;
+}
+
+.sameLine input {
+  flex-basis: 80%;
+}
+
+.trunfoInput {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.trunfoInput label {
+  margin-left: 5px;
+}

@@ -1,11 +1,44 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Input.css';
 
 class Input extends React.Component {
   render() {
     const { type, testId, labelText, onInputChange, value } = this.props;
+    if (testId === 'name-input') {
+      return (
+        <div className="nameInput">
+          <label htmlFor={ testId }>{labelText}</label>
+          <input
+            type={ type }
+            data-testid={ testId }
+            id={ testId }
+            name={ testId }
+            onChange={ onInputChange }
+            value={ value }
+          />
+        </div>
+      );
+    }
+    if (testId === 'trunfo-input') {
+      return (
+        <div className="trunfoInput">
+          <div>
+            <input
+              type={ type }
+              data-testid={ testId }
+              id={ testId }
+              name={ testId }
+              onChange={ onInputChange }
+              value={ value }
+            />
+            <label htmlFor={ testId }>{labelText}</label>
+          </div>
+        </div>
+      );
+    }
     return (
-      <div>
+      <div className="sameLine">
         <label htmlFor={ testId }>{labelText}</label>
         <input
           type={ type }

@@ -1,0 +1,12 @@
+.descripInput {
+  display: flex;
+  flex-direction: column;
+}
+
+.descripInput label {
+  margin: 5px 10px;
+}
+
+.descripInput textarea {
+  margin: 5px 10px;
+}

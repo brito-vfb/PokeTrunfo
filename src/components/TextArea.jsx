@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './TextArea.css';
 
 class TextArea extends React.Component {
   render() {
     const { testId, labelText, maxlength, value, onInputChange } = this.props;
     if (maxlength === 0) {
       return (
-        <div>
+        <div className="descripInput">
           <label htmlFor={ testId }>{labelText}</label>
           <textarea
             data-testid={ testId }
@@ -19,7 +20,7 @@ class TextArea extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="descripInput">
         <label htmlFor={ testId }>{labelText}</label>
         <textarea
           data-testid={ testId }

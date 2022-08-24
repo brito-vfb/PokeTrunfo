@@ -1,0 +1,13 @@
+.selectInput {
+  display: flex;
+  flex-basis: 100%;
+  margin: 10px;
+}
+
+.selectInput label {
+  width: 100px;
+}
+
+.selectInput select {
+  flex-basis: 80%;
+}

@@ -1,0 +1,11 @@
+form {
+  border: 2px solid black;
+  display: flex;
+  flex-basis: 45%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form h2 {
+  align-self: center;
+}
