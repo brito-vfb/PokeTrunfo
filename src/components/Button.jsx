@@ -3,9 +3,16 @@ import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   render() {
-    const { testId, value } = this.props;
+    const { testId, value, onClick, disabled } = this.props;
     return (
-      <button type="button" data-testid={ testId }>{value}</button>
+      <button
+        type="button"
+        data-testid={ testId }
+        disabled={ disabled }
+        onClick={ onClick }
+      >
+        {value}
+      </button>
     );
   }
 }
