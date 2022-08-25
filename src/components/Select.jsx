@@ -4,14 +4,14 @@ import './Select.css';
 
 class Select extends React.Component {
   render() {
-    const { testId, labelText, onInputChange, value, options } = this.props;
+    const { testId, labelText, onInputChange, value, options, name } = this.props;
     return (
       <div className="selectInput">
         <label htmlFor={ testId }>{labelText}</label>
         <select
           data-testid={ testId }
           id={ testId }
-          name={ testId }
+          name={ name }
           onChange={ onInputChange }
           value={ value }
         >
@@ -32,6 +32,7 @@ Select.propTypes = {
   onInputChange: PropTypes.func,
   value: PropTypes.string,
   options: PropTypes.array.string,
+  name: PropTypes.string,
 }.isRequired;
 
 export default Select;

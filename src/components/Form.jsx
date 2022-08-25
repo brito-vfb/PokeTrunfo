@@ -25,6 +25,7 @@ class Form extends React.Component {
       <form>
         <h2>Adicionar nova Carta</h2>
         <Input
+          name="cardName"
           type="text"
           testId="name-input"
           labelText="Nome"
@@ -32,6 +33,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <TextArea
+          name="cardDescription"
           testId="description-input"
           labelText="Descrição"
           maxlength={ 0 }
@@ -39,6 +41,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <Input
+          name="cardAttr1"
           type="number"
           testId="attr1-input"
           labelText="Vida"
@@ -46,6 +49,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <Input
+          name="cardAttr2"
           type="number"
           testId="attr2-input"
           labelText="Ataque"
@@ -53,6 +57,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <Input
+          name="cardAttr3"
           type="number"
           testId="attr3-input"
           labelText="Tamanho"
@@ -60,6 +65,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <Input
+          name="cardImage"
           type="text"
           testId="image-input"
           labelText="Imagem"
@@ -67,6 +73,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
         />
         <Select
+          name="cardRare"
           testId="rare-input"
           labelText="Raridade"
           onInputChange={ onInputChange }
@@ -74,6 +81,7 @@ class Form extends React.Component {
           options={ ['normal', 'raro', 'muito raro'] }
         />
         <Input
+          name="cardTrunfo"
           type="checkbox"
           testId="trunfo-input"
           labelText="Super Trunfo"

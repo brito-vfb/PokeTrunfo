@@ -4,7 +4,7 @@ import './Input.css';
 
 class Input extends React.Component {
   render() {
-    const { type, testId, labelText, onInputChange, value } = this.props;
+    const { type, testId, labelText, onInputChange, value, name } = this.props;
     if (testId === 'name-input') {
       return (
         <div className="nameInput">
@@ -13,7 +13,7 @@ class Input extends React.Component {
             type={ type }
             data-testid={ testId }
             id={ testId }
-            name={ testId }
+            name={ name }
             onChange={ onInputChange }
             value={ value }
           />
@@ -28,9 +28,9 @@ class Input extends React.Component {
               type={ type }
               data-testid={ testId }
               id={ testId }
-              name={ testId }
+              name={ name }
               onChange={ onInputChange }
-              value={ value }
+              checked={ value }
             />
             <label htmlFor={ testId }>{labelText}</label>
           </div>
@@ -44,7 +44,7 @@ class Input extends React.Component {
           type={ type }
           data-testid={ testId }
           id={ testId }
-          name={ testId }
+          name={ name }
           onChange={ onInputChange }
           value={ value }
         />
@@ -59,6 +59,7 @@ Input.propTypes = {
   labelText: PropTypes.string,
   onInputChange: PropTypes.func,
   value: PropTypes.string,
+  name: PropTypes.string,
 }.isRequired;
 
 export default Input;

@@ -1,0 +1,14 @@
+.cardContainer {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-basis: 45%;
+  justify-content: center;
+}
+
+.CardFront {
+  background-color: white;
+  border-radius: 15px;
+  flex-basis: 95%;
+}

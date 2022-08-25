@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import Card from './components/Card';
 
 class App extends React.Component {
   state = {
@@ -9,14 +10,22 @@ class App extends React.Component {
     cardAttr2: '',
     cardAttr3: '',
     cardImage: '',
-    // cardRare: '',
+    cardRare: '',
     cardTrunfo: false,
     // hasTrunfo: false,
     isSaveButtonDisabled: false,
   };
 
   onInputChange = (event) => {
-    console.log(`mudou alguma coisa ${event.target.name}`);
+    const { target: { name, value, checked } } = event;
+    const genericObj = {};
+    if (name === 'cardTrunfo') {
+      genericObj[name] = checked;
+    } else {
+      genericObj[name] = value;
+    }
+    console.log(genericObj);
+    this.setState(genericObj);
   };
 
   onSaveButtonClick = () => {
@@ -31,7 +40,7 @@ class App extends React.Component {
       cardAttr2,
       cardAttr3,
       cardImage,
-      // cardRare,
+      cardRare,
       cardTrunfo,
       // hasTrunfo,
       isSaveButtonDisabled,
@@ -46,12 +55,22 @@ class App extends React.Component {
             cardAttr2={ cardAttr2 }
             cardAttr3={ cardAttr3 }
             cardImage={ cardImage }
-            // cardRare={ cardRare }
+            cardRare={ cardRare }
             cardTrunfo={ cardTrunfo }
             // hasTrunfo={ hasTrunfo }
             isSaveButtonDisabled={ isSaveButtonDisabled }
             onInputChange={ this.onInputChange }
             onSaveButtonClick={ this.onSaveButtonClick }
+          />
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
           />
         </div>
       </div>

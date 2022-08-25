@@ -4,7 +4,7 @@ import './TextArea.css';
 
 class TextArea extends React.Component {
   render() {
-    const { testId, labelText, maxlength, value, onInputChange } = this.props;
+    const { testId, labelText, maxlength, value, onInputChange, name } = this.props;
     if (maxlength === 0) {
       return (
         <div className="descripInput">
@@ -12,7 +12,7 @@ class TextArea extends React.Component {
           <textarea
             data-testid={ testId }
             id={ testId }
-            name={ testId }
+            name={ name }
             value={ value }
             onChange={ onInputChange }
           />
@@ -25,7 +25,7 @@ class TextArea extends React.Component {
         <textarea
           data-testid={ testId }
           id={ testId }
-          name={ testId }
+          name={ name }
           maxLength={ maxlength }
           value={ value }
           onChange={ onInputChange }
@@ -41,6 +41,7 @@ TextArea.propTypes = {
   maxlength: PropTypes.number,
   value: PropTypes.string,
   onInputChange: PropTypes.func,
+  name: PropTypes.string,
 }.isRequired;
 
 export default TextArea;
