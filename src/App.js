@@ -6,9 +6,9 @@ class App extends React.Component {
   state = {
     cardName: '',
     cardDescription: '',
-    cardAttr1: '',
-    cardAttr2: '',
-    cardAttr3: '',
+    cardAttr1: '0',
+    cardAttr2: '0',
+    cardAttr3: '0',
     cardImage: '',
     cardRare: '',
     cardTrunfo: false,
@@ -20,7 +20,7 @@ class App extends React.Component {
   habilitSaveButton = () => {
     const hableButton = { isSaveButtonDisabled: true };
     const totalPoint = 211;
-    const totoalAtt = 90;
+    const totoalAtt = 91;
     const {
       cardName,
       cardDescription,
@@ -36,7 +36,8 @@ class App extends React.Component {
       const at2 = parseInt(cardAttr2, 10);
       const at3 = parseInt(cardAttr3, 10);
       if (at1 + at2 + at3 < totalPoint
-        && at1 < totoalAtt && at2 < totoalAtt && at3 < totoalAtt) {
+        && at1 < totoalAtt && at2 < totoalAtt && at3 < totoalAtt
+        && at1 >= 0 && at2 >= 0 && at3 >= 0) {
         hableButton.isSaveButtonDisabled = false;
       }
     }
@@ -58,9 +59,9 @@ class App extends React.Component {
     const defaultState = {
       cardName: '',
       cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
       cardImage: '',
       cardRare: '',
       cardTrunfo: false,
