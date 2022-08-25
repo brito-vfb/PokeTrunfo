@@ -14,11 +14,13 @@ class App extends React.Component {
     cardTrunfo: false,
     // hasTrunfo: false,
     isSaveButtonDisabled: true,
+    cardsList: [],
   };
 
   habilitSaveButton = () => {
     const hableButton = { isSaveButtonDisabled: true };
     const totalPoint = 211;
+    const totoalAtt = 90;
     const {
       cardName,
       cardDescription,
@@ -33,7 +35,8 @@ class App extends React.Component {
       const at1 = parseInt(cardAttr1, 10);
       const at2 = parseInt(cardAttr2, 10);
       const at3 = parseInt(cardAttr3, 10);
-      if (at1 + at2 + at3 < totalPoint) {
+      if (at1 + at2 + at3 < totalPoint
+        && at1 < totoalAtt && at2 < totoalAtt && at3 < totoalAtt) {
         hableButton.isSaveButtonDisabled = false;
       }
     }
@@ -51,8 +54,43 @@ class App extends React.Component {
     this.setState(genericObj, this.habilitSaveButton);
   };
 
+  resetState = () => {
+    const defaultState = {
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
+      cardImage: '',
+      cardRare: '',
+      cardTrunfo: false,
+      isSaveButtonDisabled: true,
+    };
+    this.setState(defaultState);
+  };
+
   onSaveButtonClick = () => {
-    console.log('clicou no botão');
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardsList,
+    } = this.state;
+    const saveCard = {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    };
+    cardsList.push(saveCard);
+    this.setState({ cardsList }, this.resetState);
   };
 
   render() {
