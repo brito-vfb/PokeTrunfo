@@ -13,7 +13,31 @@ class App extends React.Component {
     cardRare: '',
     cardTrunfo: false,
     // hasTrunfo: false,
-    isSaveButtonDisabled: false,
+    isSaveButtonDisabled: true,
+  };
+
+  habilitSaveButton = () => {
+    const hableButton = { isSaveButtonDisabled: true };
+    const totalPoint = 211;
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    } = this.state;
+    if (cardName !== '' && cardDescription !== '' && cardImage !== ''
+    && cardRare !== '' && cardAttr1 !== '' && cardAttr2 !== '' && cardAttr3 !== '') {
+      const at1 = parseInt(cardAttr1, 10);
+      const at2 = parseInt(cardAttr2, 10);
+      const at3 = parseInt(cardAttr3, 10);
+      if (at1 + at2 + at3 < totalPoint) {
+        hableButton.isSaveButtonDisabled = false;
+      }
+    }
+    this.setState(hableButton);
   };
 
   onInputChange = (event) => {
@@ -24,8 +48,7 @@ class App extends React.Component {
     } else {
       genericObj[name] = value;
     }
-    console.log(genericObj);
-    this.setState(genericObj);
+    this.setState(genericObj, this.habilitSaveButton);
   };
 
   onSaveButtonClick = () => {
