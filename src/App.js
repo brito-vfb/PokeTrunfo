@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Deck from './components/Deck';
 
 class App extends React.Component {
   state = {
@@ -100,6 +101,17 @@ class App extends React.Component {
     }
   };
 
+  onExcludeButtonClick = (event) => {
+    const excludeCard = event.target.dataset.cardname;
+    const { cardsList } = this.state;
+    const found = cardsList.find((element) => element.cardName === excludeCard);
+    const newList = cardsList.filter((element) => element.cardName !== excludeCard);
+    if (found.cardTrunfo) {
+      return this.setState({ hasTrunfo: false, cardsList: newList });
+    }
+    return this.setState({ cardsList: newList });
+  };
+
   render() {
     const {
       cardName,
@@ -112,6 +124,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      cardsList,
     } = this.state;
     return (
       <div>
@@ -141,6 +154,10 @@ class App extends React.Component {
             cardTrunfo={ cardTrunfo }
           />
         </div>
+        <Deck
+          cardList={ cardsList }
+          excludeCalback={ this.onExcludeButtonClick }
+        />
       </div>
     );
   }
