@@ -17,14 +17,25 @@ class Card extends React.Component {
     return (
       <section className="cardContainer">
         <div className="CardFront">
-          <h2 data-testid="name-card">{ cardName }</h2>
-          <img src={ cardImage } alt={ cardName } data-testid="image-card" />
-          <p data-testid="description-card">{cardDescription}</p>
-          <p data-testid="attr1-card">{`Att01 - ${cardAttr1}`}</p>
-          <p data-testid="attr2-card">{`Att02 - ${cardAttr2}`}</p>
-          <p data-testid="attr3-card">{`Att03 - ${cardAttr3}`}</p>
-          <p data-testid="rare-card">{ cardRare }</p>
-          { cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>}
+          <div className="redPart">
+            <header>
+              <h2 data-testid="name-card">{ cardName }</h2>
+              <p className="raridade" data-testid="rare-card">{ cardRare }</p>
+            </header>
+            <div className="imagebackground">
+              <img src={ cardImage } alt={ cardName } data-testid="image-card" />
+            </div>
+          </div>
+          <div className="pokeLine">
+            <div className="pokeBall" />
+          </div>
+          <div className="withPart">
+            <p data-testid="description-card">{cardDescription}</p>
+            <p data-testid="attr1-card">{`Att01 - ${cardAttr1}`}</p>
+            <p data-testid="attr2-card">{`Att02 - ${cardAttr2}`}</p>
+            <p data-testid="attr3-card">{`Att03 - ${cardAttr3}`}</p>
+            { cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>}
+          </div>
         </div>
       </section>
     );

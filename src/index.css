@@ -5,9 +5,27 @@
 
 .formsCard {
   width: 100vw;
+  max-width: 100%;
   align-items: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.leftSide {
+  flex-basis: 50%;
+  height: 100Vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rigthSide {
+  background-color: red;
+  flex-basis: 50%;
+  height: 100Vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 body {

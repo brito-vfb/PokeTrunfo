@@ -4,25 +4,37 @@
 }
 
 .nameInput label {
+  font-size: 18px;
+  line-height: 20px;
   margin: 5px 10px;
 }
 
 .nameInput input {
+  border: 0;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  line-height: 20px;
   margin: 5px 10px;
+  outline: none;
 }
 
 .sameLine {
   display: flex;
-  flex-basis: 100%;
+  flex-basis: 60%;
+  gap: 10px;
   margin: 10px;
 }
 
 .sameLine label {
+  font-size: 18px;
+  line-height: 20px;
   width: 100px;
 }
 
 .sameLine input {
   flex-basis: 80%;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .trunfoInput {
@@ -32,5 +44,12 @@
 }
 
 .trunfoInput label {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
   margin-left: 5px;
+}
+
+.nameInput input:focus {
+  border-color: red;
 }

@@ -1,14 +1,97 @@
 .cardContainer {
+  align-items: center;
   background-color: black;
   border: 2px solid black;
-  border-radius: 15px;
+  border-radius: 20px;
   display: flex;
-  flex-basis: 45%;
+  height: 570px;
   justify-content: center;
+  position: relative;
+  width: 400px;
 }
 
-.CardFront {
+.redPart header {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.redPart h2 {
   background-color: white;
-  border-radius: 15px;
-  flex-basis: 95%;
+  border-radius: 20px 0 0 20px;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  padding-left: 10px;
+  text-align: center;
+  width: 260px;
+}
+
+.raridade {
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 0 15px 15px 0;
+  color: white;
+  font-weight: 700;
+  height: 28px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+}
+
+.redPart {
+  background-color: red;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  height: 275px;
+  width: 380px;
+}
+
+.imagebackground {
+  align-items: center;
+  align-self: center;
+  background-color: black;
+  border-radius: 10px;
+  display: flex;
+  height: 235px;
+  justify-content: center;
+  width: 360px;
+}
+
+.imagebackground img {
+  border-radius: 10px;
+  height: 225px;
+  object-fit: cover;
+  width: 350px;
+}
+
+.pokeLine {
+  align-items: center;
+  background-color: black;
+  border: 10px solid black;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+  position: absolute;
+  width: 360px;
+}
+
+.pokeBall {
+  background-color: white;
+  border: 15px solid black;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+
+.withPart {
+  align-items: center;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 275px;
+  justify-content: center;
+  width: 380px;
 }

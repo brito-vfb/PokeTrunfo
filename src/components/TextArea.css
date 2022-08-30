@@ -4,9 +4,20 @@
 }
 
 .descripInput label {
+  font-size: 18px;
+  line-height: 20px;
   margin: 5px 10px;
 }
 
 .descripInput textarea {
+  border: 0;
+  border-bottom: 2px solid black;
+  font-size: 15px;
+  line-height: 20px;
   margin: 5px 10px;
+  outline: none;
+}
+
+.descripInput textarea:focus {
+  border-color: red;
 }

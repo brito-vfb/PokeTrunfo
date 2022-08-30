@@ -1,13 +1,19 @@
 .selectInput {
   display: flex;
   flex-basis: 100%;
+  gap: 10px;
   margin: 10px;
 }
 
 .selectInput label {
+  font-size: 18px;
+  line-height: 20px;
   width: 100px;
 }
 
 .selectInput select {
   flex-basis: 80%;
+  font-size: 15px;
+  height: 25px;
+  line-height: 20px;
 }

@@ -24,7 +24,7 @@ class Form extends React.Component {
     } = this.props;
     return (
       <form>
-        <h2>Adicionar nova Carta</h2>
+        <h1>Adicionar nova Carta</h1>
         <Input
           name="cardName"
           type="text"
@@ -45,7 +45,7 @@ class Form extends React.Component {
           name="cardAttr1"
           type="number"
           testId="attr1-input"
-          labelText="Vida"
+          labelText="Ataque"
           value={ cardAttr1 }
           onInputChange={ onInputChange }
         />
@@ -53,7 +53,7 @@ class Form extends React.Component {
           name="cardAttr2"
           type="number"
           testId="attr2-input"
-          labelText="Ataque"
+          labelText="Defesa"
           value={ cardAttr2 }
           onInputChange={ onInputChange }
         />
@@ -61,7 +61,7 @@ class Form extends React.Component {
           name="cardAttr3"
           type="number"
           testId="attr3-input"
-          labelText="Tamanho"
+          labelText="Velocidade"
           value={ cardAttr3 }
           onInputChange={ onInputChange }
         />
@@ -90,7 +90,7 @@ class Form extends React.Component {
             value={ cardTrunfo }
             onInputChange={ onInputChange }
           />
-            : <h2>Você já tem um Super Trunfo em seu baralho</h2>
+            : <h3>Você já tem um Super Trunfo em seu baralho</h3>
         }
         <Button
           testId="save-button"
