@@ -28,6 +28,28 @@
   justify-content: center;
 }
 
+.seconPage {
+  background-color: lightgray;
+  align-items: center;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.searchBar {
+  box-sizing: border-box;
+  border: 5px solid black;
+  background-color: black;
+  height: 50px;
+  width: 100%;
+}
+
+.deackContainer {
+  display: flex;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

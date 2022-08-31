@@ -21,7 +21,7 @@ class Deck extends React.Component {
               cardTrunfo,
             } = card;
             return (
-              <div key={ cardName }>
+              <div className="cardCombo" key={ cardName }>
                 <Card
                   cardName={ cardName }
                   cardDescription={ cardDescription }

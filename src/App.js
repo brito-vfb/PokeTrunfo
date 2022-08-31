@@ -158,10 +158,15 @@ class App extends React.Component {
             />
           </div>
         </div>
-        <Deck
-          cardList={ cardsList }
-          excludeCalback={ this.onExcludeButtonClick }
-        />
+        <div className="seconPage">
+          <header className="searchBar" />
+          <div className="deackContainer">
+            <Deck
+              cardList={ cardsList }
+              excludeCalback={ this.onExcludeButtonClick }
+            />
+          </div>
+        </div>
       </div>
     );
   }

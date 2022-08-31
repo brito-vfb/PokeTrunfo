@@ -30,11 +30,29 @@ class Card extends React.Component {
             <div className="pokeBall" />
           </div>
           <div className="withPart">
-            <p data-testid="description-card">{cardDescription}</p>
-            <p data-testid="attr1-card">{`Att01 - ${cardAttr1}`}</p>
-            <p data-testid="attr2-card">{`Att02 - ${cardAttr2}`}</p>
-            <p data-testid="attr3-card">{`Att03 - ${cardAttr3}`}</p>
-            { cardTrunfo && <p data-testid="trunfo-card">Super Trunfo</p>}
+            <div className="superTag">
+              { cardTrunfo
+              && <p className="superTrunf" data-testid="trunfo-card">Super Trunfo</p>}
+            </div>
+            <div className="descricao">
+              <p className="descricaoT" data-testid="description-card">
+                {cardDescription}
+              </p>
+            </div>
+          </div>
+          <div className="atrContainer">
+            <div className="atkCont">
+              <p className="atrTitle">ATQ</p>
+              <p className="artlef" data-testid="attr1-card">{cardAttr1}</p>
+            </div>
+            <div className="defCont">
+              <p className="atrTitle">DEF</p>
+              <p className="artmid" data-testid="attr2-card">{cardAttr2}</p>
+            </div>
+            <div className="velCont">
+              <p className="atrTitle">VEL</p>
+              <p className="atrrht" data-testid="attr3-card">{cardAttr3}</p>
+            </div>
           </div>
         </div>
       </section>
