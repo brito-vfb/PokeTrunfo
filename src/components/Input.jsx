@@ -4,10 +4,10 @@ import './Input.css';
 
 class Input extends React.Component {
   render() {
-    const { type, testId, labelText, onInputChange, value, name } = this.props;
+    const { type, testId, labelText, onInputChange, value, name, className } = this.props;
     if (testId === 'name-input') {
       return (
-        <div className="nameInput">
+        <div className={ className }>
           <label htmlFor={ testId }>{labelText}</label>
           <input
             type={ type }
@@ -16,14 +16,14 @@ class Input extends React.Component {
             name={ name }
             onChange={ onInputChange }
             value={ value }
-            maxLength={ 25 }
+            // maxLength={ 25 }
           />
         </div>
       );
     }
     if (testId === 'trunfo-input') {
       return (
-        <div className="trunfoInput">
+        <div className={ className }>
           <div>
             <input
               type={ type }
@@ -39,7 +39,7 @@ class Input extends React.Component {
       );
     }
     return (
-      <div className="sameLine">
+      <div className={ className }>
         <label htmlFor={ testId }>{labelText}</label>
         <input
           type={ type }
@@ -48,8 +48,8 @@ class Input extends React.Component {
           name={ name }
           onChange={ onInputChange }
           value={ value }
-          min={ 0 }
-          max={ 90 }
+          // min={ 0 }
+          // max={ 90 }
         />
       </div>
     );
@@ -63,6 +63,7 @@ Input.propTypes = {
   onInputChange: PropTypes.func,
   value: PropTypes.string,
   name: PropTypes.string,
+  className: PropTypes.string,
 }.isRequired;
 
 export default Input;

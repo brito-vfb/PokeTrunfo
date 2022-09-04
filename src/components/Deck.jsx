@@ -1,15 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Select.css';
+import './Deck.css';
 import Card from './Card';
 
 class Deck extends React.Component {
+  filterPriority = (cardList, filterName, filtertrunfo, filterSelect) => {
+    let newList = cardList;
+    if (filtertrunfo !== false) {
+      newList = newList.filter((card) => card.cardTrunfo === filtertrunfo);
+    }
+    if (filterSelect !== 'All') {
+      newList = newList.filter((card) => card.cardRare === filterSelect);
+    }
+    if (filterName !== '') {
+      newList = newList.filter(
+        (card) => card.cardName.toLowerCase().includes(filterName.toLowerCase()),
+      );
+    }
+    return newList;
+  };
+
   render() {
-    const { cardList, excludeCalback } = this.props;
+    const { cardList,
+      excludeCalback,
+      filterName,
+      filtertrunfo,
+      filterSelect,
+    } = this.props;
+    const newList = this.filterPriority(cardList, filterName, filtertrunfo, filterSelect);
+    console.log(cardList);
+    console.log(newList);
     return (
       <div className="deckContainer">
         {
-          cardList.map((card) => {
+          newList.map((card) => {
             const {
               cardName,
               cardDescription,
@@ -33,6 +57,7 @@ class Deck extends React.Component {
                   cardTrunfo={ cardTrunfo }
                 />
                 <button
+                  className="excludbtn"
                   type="button"
                   data-testid="delete-button"
                   onClick={ excludeCalback }
@@ -53,6 +78,9 @@ Deck.propTypes = {
   testId: PropTypes.string,
   cardList: PropTypes.array,
   excludeCalback: PropTypes.func,
+  filterName: PropTypes.string,
+  filtertrunfo: PropTypes.bool,
+  filterSelect: PropTypes.string,
 }.isRequired;
 
 export default Deck;

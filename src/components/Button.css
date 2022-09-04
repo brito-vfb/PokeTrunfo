@@ -8,6 +8,16 @@ button {
   width: 200px;
 }
 
+.excludbtn {
+  align-self: flex-end;
+  background-color: red;
+  border-radius: 15px;
+  color: white;
+  font-size: larger;
+  height: 30px;
+  width: 190px;
+}
+
 button:disabled {
   background-color: rgba(255, 0, 0, 0.493);
 }

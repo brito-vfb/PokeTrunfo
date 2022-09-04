@@ -50,6 +50,16 @@
   margin-left: 5px;
 }
 
+.filterInput {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+}
+
+.filterInput label {
+  color: white;
+}
+
 .nameInput input:focus {
   border-color: red;
 }

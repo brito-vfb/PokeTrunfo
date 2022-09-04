@@ -2,6 +2,7 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 import Deck from './components/Deck';
+import Input from './components/Input';
 
 class App extends React.Component {
   state = {
@@ -16,6 +17,9 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     cardsList: [],
+    filterName: '',
+    filtertrunfo: false,
+    filterSelect: 'All',
   };
 
   habilitSaveButton = () => {
@@ -48,7 +52,7 @@ class App extends React.Component {
   onInputChange = (event) => {
     const { target: { name, value, checked } } = event;
     const genericObj = {};
-    if (name === 'cardTrunfo') {
+    if (name === 'cardTrunfo' || name === 'filtertrunfo') {
       genericObj[name] = checked;
     } else {
       genericObj[name] = value;
@@ -125,6 +129,9 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       cardsList,
+      filterName,
+      filtertrunfo,
+      filterSelect,
     } = this.state;
     return (
       <div>
@@ -159,13 +166,33 @@ class App extends React.Component {
           </div>
         </div>
         <div className="seconPage">
-          <header className="searchBar" />
-          <div className="deackContainer">
-            <Deck
-              cardList={ cardsList }
-              excludeCalback={ this.onExcludeButtonClick }
+          <header className="searchBar">
+            <Input
+              name="filterName"
+              type="text"
+              testId="name-filter"
+              labelText="Name Filter"
+              value={ filterName }
+              onInputChange={ this.onInputChange }
+              className="filterInput"
             />
-          </div>
+            <Input
+              name="filtertrunfo"
+              type="checkbox"
+              testId="trunfo-filter"
+              labelText="Super Trunfo"
+              value={ filtertrunfo }
+              onInputChange={ this.onInputChange }
+              className="trunfoInput"
+            />
+          </header>
+          <Deck
+            cardList={ cardsList }
+            excludeCalback={ this.onExcludeButtonClick }
+            filterName={ filterName }
+            filtertrunfo={ filtertrunfo }
+            filterSelect={ filterSelect }
+          />
         </div>
       </div>
     );

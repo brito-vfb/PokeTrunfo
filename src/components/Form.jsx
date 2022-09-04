@@ -32,6 +32,7 @@ class Form extends React.Component {
           labelText="Nome"
           value={ cardName }
           onInputChange={ onInputChange }
+          className="nameInput"
         />
         <TextArea
           name="cardDescription"
@@ -48,6 +49,7 @@ class Form extends React.Component {
           labelText="Ataque"
           value={ cardAttr1 }
           onInputChange={ onInputChange }
+          className="sameLine"
         />
         <Input
           name="cardAttr2"
@@ -56,6 +58,7 @@ class Form extends React.Component {
           labelText="Defesa"
           value={ cardAttr2 }
           onInputChange={ onInputChange }
+          className="sameLine"
         />
         <Input
           name="cardAttr3"
@@ -64,6 +67,7 @@ class Form extends React.Component {
           labelText="Velocidade"
           value={ cardAttr3 }
           onInputChange={ onInputChange }
+          className="sameLine"
         />
         <Input
           name="cardImage"
@@ -72,6 +76,7 @@ class Form extends React.Component {
           labelText="Imagem"
           value={ cardImage }
           onInputChange={ onInputChange }
+          className="sameLine"
         />
         <Select
           name="cardRare"
@@ -89,6 +94,7 @@ class Form extends React.Component {
             labelText="Super Trunfo"
             value={ cardTrunfo }
             onInputChange={ onInputChange }
+            className="trunfoInput"
           />
             : <h3>Você já tem um Super Trunfo em seu baralho</h3>
         }
