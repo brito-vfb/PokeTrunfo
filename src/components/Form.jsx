@@ -85,6 +85,7 @@ class Form extends React.Component {
           onInputChange={ onInputChange }
           value={ cardRare }
           options={ ['normal', 'raro', 'muito raro'] }
+          className="selectInput"
         />
         {
           hasTrunfo === false ? <Input

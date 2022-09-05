@@ -9,13 +9,13 @@ button {
 }
 
 .excludbtn {
-  align-self: flex-end;
+  align-self: center;
   background-color: red;
   border-radius: 15px;
   color: white;
   font-size: larger;
   height: 30px;
-  width: 190px;
+  width: 350px;
 }
 
 button:disabled {

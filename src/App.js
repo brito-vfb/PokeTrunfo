@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Card from './components/Card';
 import Deck from './components/Deck';
 import Input from './components/Input';
+import Select from './components/Select';
 
 class App extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class App extends React.Component {
     cardsList: [],
     filterName: '',
     filtertrunfo: false,
-    filterSelect: 'All',
+    filterSelect: 'todas',
   };
 
   habilitSaveButton = () => {
@@ -183,7 +184,16 @@ class App extends React.Component {
               labelText="Super Trunfo"
               value={ filtertrunfo }
               onInputChange={ this.onInputChange }
-              className="trunfoInput"
+              className="filtertrunfo"
+            />
+            <Select
+              name="filterSelect"
+              testId="rare-filter"
+              labelText="Raridade"
+              onInputChange={ this.onInputChange }
+              value={ filterSelect }
+              options={ ['todas', 'normal', 'raro', 'muito raro'] }
+              className="filterSelect"
             />
           </header>
           <Deck

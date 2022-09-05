@@ -17,3 +17,26 @@
   height: 25px;
   line-height: 20px;
 }
+
+.filterSelect {
+  align-items: center;
+  display: flex;
+  flex-basis: 30%;
+  height: 45px;
+  justify-content: space-around;
+}
+
+.filterSelect select {
+  flex-basis: 60%;
+  font-size: 15px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.filterSelect label {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  width: 100px;
+}

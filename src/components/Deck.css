@@ -1,5 +1,4 @@
 .deckContainer {
-  background-color: aqua;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -7,9 +6,7 @@
 }
 
 .cardCombo {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 5px;
 }

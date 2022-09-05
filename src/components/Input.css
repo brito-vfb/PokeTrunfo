@@ -52,14 +52,37 @@
 
 .filterInput {
   display: flex;
+  flex-basis: 30%;
   gap: 10px;
   margin: 10px;
 }
 
 .filterInput label {
   color: white;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.filterInput input {
+  flex-basis: 60%;
 }
 
 .nameInput input:focus {
   border-color: red;
+}
+
+.filtertrunfo {
+  display: flex;
+  flex-basis: 30%;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.filtertrunfo label {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 20px;
 }

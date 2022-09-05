@@ -9,7 +9,7 @@ class Deck extends React.Component {
     if (filtertrunfo !== false) {
       newList = newList.filter((card) => card.cardTrunfo === filtertrunfo);
     }
-    if (filterSelect !== 'All') {
+    if (filterSelect !== 'todas') {
       newList = newList.filter((card) => card.cardRare === filterSelect);
     }
     if (filterName !== '') {
