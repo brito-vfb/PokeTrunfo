@@ -16,7 +16,7 @@ class Input extends React.Component {
             name={ name }
             onChange={ onInputChange }
             value={ value }
-            // maxLength={ 25 }
+            maxLength={ 25 }
           />
         </div>
       );
@@ -48,8 +48,8 @@ class Input extends React.Component {
           name={ name }
           onChange={ onInputChange }
           value={ value }
-          // min={ 0 }
-          // max={ 90 }
+          min={ 0 }
+          max={ 99 }
         />
       </div>
     );

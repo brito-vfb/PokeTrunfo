@@ -4,6 +4,7 @@ import Card from './components/Card';
 import Deck from './components/Deck';
 import Input from './components/Input';
 import Select from './components/Select';
+import preBuildCards from './Source/DataBase'
 
 class App extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
-    cardsList: [],
+    cardsList: preBuildCards,
     filterName: '',
     filtertrunfo: false,
     filterSelect: 'todas',
@@ -25,8 +26,8 @@ class App extends React.Component {
 
   habilitSaveButton = () => {
     const hableButton = { isSaveButtonDisabled: true };
-    const totalPoint = 211;
-    const totoalAtt = 91;
+    const totalPoint = 298;
+    const totoalAtt = 100;
     const {
       cardName,
       cardDescription,
@@ -51,13 +52,18 @@ class App extends React.Component {
   };
 
   onInputChange = (event) => {
-    const { target: { name, value, checked } } = event;
+    const { target: { name, value, checked, type } } = event;
     const genericObj = {};
     if (name === 'cardTrunfo' || name === 'filtertrunfo') {
       genericObj[name] = checked;
     } else {
       genericObj[name] = value;
     }
+    if (type === 'number' && value.length > 2){
+      const newValue = value.splice(0,2)
+      genericObj[name] = newValue;
+    }
+
     this.setState(genericObj, this.habilitSaveButton);
   };
 
@@ -208,5 +214,4 @@ class App extends React.Component {
     );
   }
 }
-// primeiro commitd
 export default App;
