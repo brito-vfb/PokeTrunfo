@@ -4,8 +4,8 @@ Poketrunfo foi um desenvolvido a partir de um projeto realizado no decorrer do m
 O objetivo do é permitir que o usuário crie seu próprio baralho de cartas baseadas no antigo jogo Super Trunfo, usando a temática de um jogo / desenho igualmente icônico nos anos 90 o Pokemon.
 
 ## Preview
-![Forms](imgs/Preview-forms.png)
-![Deck](imgs/Preview-deck.png)
+![Forms](src/imgs/Preview-forms.png)
+![Deck](src/imgs/Preview-Deck.png)
 
 ## Tecnologias 
 [![My Skills](https://skillicons.dev/icons?i=react,js,html,css)](https://skillicons.dev)
